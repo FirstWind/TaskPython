@@ -6,7 +6,6 @@ def add_order(orders, topings):
             orders.append(toping)
             print('Добавили')
 
-
     return orders
 
 def vibor_zakaza():
