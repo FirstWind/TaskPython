@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name=""
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.5.js"></script>
+    <script>
+      function countChar(val) {
+        var len = val.value.length;
+        if (len >= 1000) {
+          val.value = val.value.substring(0, 1000);
+        } else {
+          var char = 0 + len
+          $('#charNum').text(char + '/1000');
+        }
+      };
+    </script>
+
+    <title>Account Settings</title>
+  </head>
+
+  <body class="bg-white">
+    <div class="mt-15 mb-14">
+      <div class="border-l-8 border-blue-200 text-blue-200 mr-72">
+        <h1 class="mt-10 mb-8 ml-6 font-bold text-2xl">Настройки профиля</h1>
+      </div>
+      <div class="max-w-xl ml-7 mr-72">
+        <form>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+          <span class="firstname">Имя</span>
+          <style>
+            .firstname:after {
+              content:" *";
+              color: red;
+            }
+          </style>
+          <input type="text" name="firstname" required placeholder="Text" class="block rounded-lg bg-gray-50 w-full p-3">
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+          <span class="lastname">Фамилия</span>
+          <input type="text" name="lastname" placeholder="Text" class="block rounded-lg bg-gray-50 w-full p-3">
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+          <span class="phone">Телефон</span>
+          <input type="text" name="phone" placeholder="Text" class="block rounded-lg bg-gray-50 w-full p-3">
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+          <span class="github">GitHub</span>
+          <input type="text" name="github" placeholder="Text" class="block rounded-lg bg-gray-50 w-full p-3">
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+          <span class="biografy">Биография</span>
+          <div class="kuku bg-gray-50 rounded-lg w-full p-3">
+            <textarea name="biografy" onkeypress="countChar(this)" maxlength=1000 placeholder="Hint text" class="bg-gray-50 w-full" rows="4"></textarea>
+            <p id="charNum"> </p>
+          </div>
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+          <span class="birthday">Дата рождения</span>
+          <input type="date" name="birthday" class="block rounded-lg bg-gray-50 w-full p-3">
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+        <span class="sex">Пол</span>
+        <select class="form-select block rounded-lg bg-gray-50 w-full p-3" name="sex">
+          <option>Мужской</option>
+          <option>Женский</option>
+        </select>
+        </label>
+      </div>
+
+      <div>
+        <label class="block ml-0.5 mr-4 mb-6">
+        <span class="technology">Технологии</span>
+        <select class="form-select block rounded-lg bg-gray-50 w-full p-3" name="technology">
+          <option value="" disabled selected>Выберите технологии которыми владеете</option>
+          <option>Python</option>
+          <option>Django</option>
+        </select>
+        </label>
+      </div>
+    </div>
+    </form>
+  </div>
+  </body>
+</html>
